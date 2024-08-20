@@ -1,0 +1,109 @@
+/* Base styles for the navbar */
+.navbar {
+    border-radius: 2px;
+    border-color: aliceblue;
+    background-color: black;
+    padding: 10px;
+    height: 110px;
+    position: fixed; /* Make navbar fixed */
+    top: 0;
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 1000; /* Keep it on top of other elements */
+}
+
+.container {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navList {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.navItem {
+    margin: 0 1em; /* Use relative units for better scaling */
+}
+
+.navLink {
+    color: white;
+    text-decoration: none;
+    font-size: 1em; /* Use relative units */
+    position: relative;
+    font-family: 'Inknut Antiqua', serif;
+}
+
+.navLink:hover {
+    color: #CF5E0D;
+}
+
+.logoContainer {
+    padding-top: 0; 
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    height: auto;  /* Maintain aspect ratio */
+    max-width: 20%; /* Ensure it doesn't exceed the container's width */
+}
+
+/* Media queries for responsiveness */
+
+/* Adjust for small screens */
+@media (max-width: 768px) {
+    .navbar {
+        height: 80px; /* Smaller height for small screens */
+        padding: 5px;
+    }
+
+    .logo {
+        max-width: 30%; /* Increase logo size for small screens */
+    }
+
+    .navList {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navItem {
+        margin: 0.5em 0; /* Adjust margin for vertical alignment */
+    }
+
+    .navLink {
+        font-size: 0.9em; /* Slightly smaller font size */
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5px;
+    }
+}
+
+/* Adjust for very small screens (e.g., mobile devices) */
+@media (max-width: 480px) {
+    .navbar {
+        height: 60px; /* Even smaller height for very small screens */
+    }
+
+    .logo {
+        max-width: 40%; /* Further increase logo size for very small screens */
+    }
+
+    .navLink {
+        font-size: 0.8em; /* Smaller font size for better fit */
+    }
+
+    .navItem {
+        margin: 0.3em 0; /* Reduce margin for very small screens */
+    }
+}
