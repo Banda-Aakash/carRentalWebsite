@@ -9,10 +9,11 @@
     top: 0;
     width: 100%; /* Ensure it spans the full width */
     z-index: 1000; /* Keep it on top of other elements */
+    /* justify-content: center; */
+    align-items: center;
 }
 
 .container {
-    padding-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,16 +26,17 @@
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
+    padding-top: 10px;
 }
 
 .navItem {
-    margin: 0 1em; /* Use relative units for better scaling */
+    margin: 0 15px;
 }
 
 .navLink {
     color: white;
     text-decoration: none;
-    font-size: 1em; /* Use relative units */
+    font-size: 16px;
     position: relative;
     font-family: 'Inknut Antiqua', serif;
 }
@@ -43,67 +45,49 @@
     color: #CF5E0D;
 }
 
-.logoContainer {
-    padding-top: 0; 
-    position: absolute;
-    left: 50%;
-    top: 50%; 
-    transform: translate(-50%, -50%);
-}
-
-.logo {
-    height: auto;  /* Maintain aspect ratio */
-    max-width: 20%; /* Ensure it doesn't exceed the container's width */
-}
-
-/* Media queries for responsiveness */
-
-/* Adjust for small screens */
-@media (max-width: 768px) {
-    .navbar {
-        height: 80px; /* Smaller height for small screens */
-        padding: 5px;
+/* Center logo on larger screens */
+@media (min-width: 769px) {
+    .logo {
+        padding-top: 0; 
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 10%; /* Adjust logo size */
     }
+}
+
+
+
+/* Adjust for very small screens (phones) */
+@media (max-width: 480px) {
+    .navbar {
+        height: 60px; /* Even smaller height */
+        padding: 5px 10px;
+    }
+    
 
     .logo {
-        max-width: 30%; /* Increase logo size for small screens */
+        align-items: c;
+        padding-right: 10px;
+        max-width: 20%; /* Further adjust logo size */
+        z-index: -1;
+    }
+
+    .navLink {
+        font-size: 12px; /* Further adjust font size */
     }
 
     .navList {
-        flex-direction: column;
+        width: 60%;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
+        margin-bottom: 15px;
     }
 
     .navItem {
-        margin: 0.5em 0; /* Adjust margin for vertical alignment */
+        margin: 3px 0; /* Further reduce margin */
     }
-
-    .navLink {
-        font-size: 0.9em; /* Slightly smaller font size */
-    }
-
-    .container {
-        flex-direction: column;
-        align-items: center;
-        padding-top: 5px;
-    }
-}
-
-/* Adjust for very small screens (e.g., mobile devices) */
-@media (max-width: 480px) {
-    .navbar {
-        height: 60px; /* Even smaller height for very small screens */
-    }
-
-    .logo {
-        max-width: 40%; /* Further increase logo size for very small screens */
-    }
-
-    .navLink {
-        font-size: 0.8em; /* Smaller font size for better fit */
-    }
-
-    .navItem {
-        margin: 0.3em 0; /* Reduce margin for very small screens */
-    }
+    
 }

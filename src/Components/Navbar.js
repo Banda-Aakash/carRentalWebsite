@@ -18,9 +18,7 @@ export default function Navbar() {
                         <Link to="/contact" className="navLink">Contact Us</Link>
                     </li>
                 </ul>
-                <div className="logoContainer">
                     <img src='/logo.png' alt="Logo" className="logo" />
-                </div>
             </div>
         </nav>
     );
